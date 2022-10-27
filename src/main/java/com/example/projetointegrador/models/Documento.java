@@ -16,7 +16,15 @@ import javax.persistence.*;
 public class Documento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private long id;
+    
+    @Column(name='cpf')
     private String cpf;
+    
+    @Column(name="identidade")
     private String identidade;
+    
+    @Column(name="cnpj")
     private String cnpj;
 }
