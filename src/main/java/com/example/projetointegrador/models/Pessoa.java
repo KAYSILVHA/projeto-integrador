@@ -22,6 +22,7 @@ public class Pessoa {
 
     @Column(name="nome")
     private String nome;
+<<<<<<< HEAD
 
     @ ManyToOne ( cascade ={ CascadeType . MERGE , CascadeType . DETACH , CascadeType . REFRESH , CascadeType . PERSIST }, fetch = FetchType . LAZY )
     @JoinTable (name= "documento_pessoa " ,
@@ -33,6 +34,19 @@ public class Pessoa {
     @JoinTable (name= " pessoa_endereco " ,
             joinColumns = @JoinColumn ( name = "id_documento" ),
             inverseJoinColumns = @JoinColumn ( name = "id_pessoa" ))
+=======
+    
+     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="documento_pessoa",
+               joinColumns=@JoinColumn(name="id_documento"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))
+    private Documento documento;
+
+   @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="pessoa_endereco",
+               joinColumns=@JoinColumn(name="id_documento"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))            
+>>>>>>> origin/main
     private Endereco endereco;
 
     @Column(name="idade")
@@ -49,11 +63,18 @@ public class Pessoa {
 
     @Column(name="rendimentoMensal")
     private Double rendimentoMensal;
+<<<<<<< HEAD
 
     @ ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.LAZY )
     @JoinTable (name= " pessoa_carteira " ,
             joinColumns = @JoinColumn ( name = "id_carteira" ),
             inverseJoinColumns = @JoinColumn ( name = "id_pessoa" ))
+=======
+    
+     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="pessoa_carteira",
+               joinColumns=@JoinColumn(name="id_carteira"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))
+>>>>>>> origin/main
     private Carteira carteira;
-
 }
