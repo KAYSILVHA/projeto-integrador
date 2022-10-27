@@ -24,11 +24,17 @@ public class Pessoa {
 
     @Column(name="nome")
     private String nome;
-
-    @Column(name="documento")
+    
+     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="documento_pessoa",
+               joinColumns=@JoinColumn(name="id_documento"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))
     private Documento documento;
 
-    @Column(name="endereco")
+   @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="pessoa_endereco",
+               joinColumns=@JoinColumn(name="id_documento"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))            
     private Endereco endereco;
 
     @Column(name="idade")
@@ -45,8 +51,10 @@ public class Pessoa {
 
     @Column(name="rendimentoMensal")
     private Double rendimentoMensal;
-
-    @Column(name="Carteira")
+    
+     @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
+    @JoinTable(name="pessoa_carteira",
+               joinColumns=@JoinColumn(name="id_carteira"),
+               inverseJoinColumns=@JoinColumn(name="id_pessoa"))
     private Carteira carteira;
-
 }
