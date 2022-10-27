@@ -19,7 +19,7 @@ public class Carteira {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//identificador automatico
 
     @Column(name="id")
-    private long id;
+    private Long id;
 
     @Column(name="nome")
     private String nome;
