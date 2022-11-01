@@ -17,9 +17,8 @@ import java.util.Date;
 public class Carteira {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//identificador automatico
-
-    @Column(name="id")
-    private Long id;
+    @Column(name="id_carteira")
+    private Long Id;
 
     @Column(name="nome")
     private String nome;

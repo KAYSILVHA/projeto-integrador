@@ -18,21 +18,22 @@ import javax.persistence.*;
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="id_pessoa")
+    private Long Id;
 
     @Column(name="nome")
     private String nome;
 
-    @ ManyToOne ( cascade ={ CascadeType . MERGE , CascadeType . DETACH , CascadeType . REFRESH , CascadeType . PERSIST }, fetch = FetchType . LAZY )
+    @ManyToOne ( cascade ={ CascadeType . MERGE , CascadeType . DETACH , CascadeType . REFRESH , CascadeType . PERSIST }, fetch = FetchType . LAZY )
     @JoinTable (name= "documento_pessoa " ,
-            joinColumns = @JoinColumn ( name = "id_documento" ),
-            inverseJoinColumns = @JoinColumn ( name = "id_pessoa" ))
+            joinColumns = @JoinColumn(name = "id_documento"),
+            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
     private Documento  documento;
 
    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
     @JoinTable(name="pessoa_endereco",
-               joinColumns=@JoinColumn(name="id_documento"),
-               inverseJoinColumns=@JoinColumn(name="id_pessoa"))
+               joinColumns= @JoinColumn(name="id_endereco"),
+               inverseJoinColumns= @JoinColumn(name="id_pessoa"))
     private Endereco endereco;
 
     @Column(name="idade")
@@ -52,7 +53,7 @@ public class Pessoa {
 
     @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.LAZY )
     @JoinTable (name= "pessoa_carteira" ,
-            joinColumns = @JoinColumn ( name = "id_carteira" ),
-            inverseJoinColumns = @JoinColumn ( name = "id_pessoa" ))
+            joinColumns = @JoinColumn(name = "id_carteira"),
+            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
     private Carteira carteira;
 }
