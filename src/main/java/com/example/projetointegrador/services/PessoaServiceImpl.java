@@ -8,17 +8,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PessoaServiceImpl {
+public class PessoaServiceImpl implements PessoaService{
     final PessoaRepository pessoaRepository;
 
     public PessoaServiceImpl(PessoaRepository pessoaRepository) {
         this.pessoaRepository = pessoaRepository;
     }
-    public Pessoa salvarPessoa(Pessoa pessoa){
-        Pessoa pessoa1= pessoaRepository.save(pessoa);
-        return pessoa1;
-    }
-    public List<Pessoa> buscarPessoa(){
+   @Override
+    public List<Pessoa> listar(){
         return pessoaRepository.findAll();
-    }
+   }
+   @Override
+    public Pessoa editar(Pessoa pessoa){
+        return pessoaRepository.save(pessoa);
+   }
+   @Override
+   public Pessoa salvar(Pessoa pessoa){
+       return pessoaRepository.save(pessoa);
+   }
 }
