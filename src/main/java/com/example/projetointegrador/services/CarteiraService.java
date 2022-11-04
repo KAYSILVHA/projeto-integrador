@@ -8,6 +8,8 @@ public interface CarteiraService {
     List<Carteira> listar();
 
     Carteira editar(Carteira carteira);
-
+ 
     Carteira salvar(Carteira carteira);
+    
+    void deletar(Long id_carteira);
 }
