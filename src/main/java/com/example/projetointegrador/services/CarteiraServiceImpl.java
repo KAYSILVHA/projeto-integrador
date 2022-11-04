@@ -28,7 +28,7 @@ public class CarteiraServiceImpl  implements CarteiraService{
         }
         @Override
         public void deletar(Long id_carteira){
-        pessoaRepository.deleteById(id_carteira):
+        carteiraRepository.deleteById(id_carteira):
     }}
 
 
