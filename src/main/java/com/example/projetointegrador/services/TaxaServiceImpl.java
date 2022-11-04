@@ -27,4 +27,8 @@ public class TaxaServiceImpl implements TaxaService{
     public Taxa salvar(Taxa taxa){
         return taxaRepository.save(taxa);
     }
+   @Override
+        public void deletar(Long id_taxa){
+        taxaRepository.deleteById(id_taxa);
+    }
 }
