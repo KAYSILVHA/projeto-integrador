@@ -29,5 +29,5 @@ public class DocumentoServiceImpl implements DocumentoService{
 }
      @Override
      public void deletar(Long id_documento){
-        documentoRepository.deleteById(id_documento):
+        documentoRepository.deleteById(id_documento);
     }}
