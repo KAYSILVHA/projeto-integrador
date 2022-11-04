@@ -11,4 +11,6 @@ public interface TaxaService {
   Taxa editar(Taxa taxa);
 
     Taxa salvar(Taxa taxa);
+   
+    void deletar(Long id_taxa);
 }
