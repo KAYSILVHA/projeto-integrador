@@ -1,6 +1,8 @@
 package com.example.projetointegrador.services;
 
+import com.example.projetointegrador.dto.CarteiraDTO;
 import com.example.projetointegrador.dto.PessoaDTO;
+import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
