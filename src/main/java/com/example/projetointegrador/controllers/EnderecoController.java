@@ -37,7 +37,7 @@ public class EnderecoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     
-     @DeleteMapping(value = "/deleteEndereco")
+     @DeleteMapping(value = "/deletarEndereco")
     public ResponseEntity<Object> deletarEndereco(Long id_endereco) {
         enderecoServiceImpl.deletar(id_endereco);
         return ResponseEntity.status(HttpStatus.CREATED).build();
