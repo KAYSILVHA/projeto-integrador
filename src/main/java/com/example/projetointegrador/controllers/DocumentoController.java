@@ -37,7 +37,7 @@ public class DocumentoController {
         Documento response = documentoServiceImpl.editar(documento);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-     @DeleteMapping(value = "/deleteDocumento")
+     @DeleteMapping(value = "/deletarDocumento")
     public ResponseEntity<Object> deletarDocumento(Long id_documento) {
         documentoServiceImpl.deletar(id_documento);
         return ResponseEntity.status(HttpStatus.CREATED).build();
