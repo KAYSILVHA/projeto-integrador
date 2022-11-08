@@ -12,7 +12,6 @@ import java.util.List;
 public class CarteiraServiceImpl  implements CarteiraService {
 
     final CarteiraRepository carteiraRepository;
-
     public CarteiraServiceImpl(CarteiraRepository carteiraRepository) {
         this.carteiraRepository = carteiraRepository;
     }
@@ -34,7 +33,8 @@ public class CarteiraServiceImpl  implements CarteiraService {
     @Override
     public void deletar(Long id_carteira){
         carteiraRepository.deleteById(id_carteira);
-    }
-    }
+    }}
 
 
+
+       

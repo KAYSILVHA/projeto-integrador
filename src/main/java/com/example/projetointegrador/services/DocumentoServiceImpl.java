@@ -27,7 +27,8 @@ public class DocumentoServiceImpl implements DocumentoService{
     public Documento salvar(Documento documento){
         return documentoRepository.save(documento);
     }
-    @Override
-    public void deletar(Long id_documento){
+     @Override
+     public void deletar(Long id_documento){
         documentoRepository.deleteById(id_documento);
     }}
+

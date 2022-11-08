@@ -1,9 +1,7 @@
 package com.example.projetointegrador.controllers;
 
 import com.example.projetointegrador.models.Carteira;
-import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.services.CarteiraServiceImpl;
-import com.example.projetointegrador.services.PessoaServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +17,6 @@ public class CarteiraController {
     public CarteiraController(CarteiraServiceImpl carteiraService) {
         this.carteiraServiceImpl = carteiraService;
     }
-
     @PostMapping(value = "/salvarCarteira")
     public ResponseEntity<Object> salvarCarteira(@RequestBody Carteira carteira) {
         Carteira response = carteiraServiceImpl.salvar(carteira);
@@ -37,9 +34,9 @@ public class CarteiraController {
         Carteira response = carteiraServiceImpl.editar(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
     @DeleteMapping(value = "/deleteCarteira")
     public ResponseEntity<Object> deletarCarteira(Long id_carteira) {
         carteiraServiceImpl.deletar(id_carteira);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+
     }}

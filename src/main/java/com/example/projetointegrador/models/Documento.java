@@ -17,7 +17,8 @@ public class Documento {
     @Id
     @Column(name = "id_documento")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id_documento;
+
+    private Long id_documento;
 
     @Column(name = "cpf")
     private String cpf;

@@ -20,6 +20,7 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_pessoa")
     private Long Id_pessoa;
+    private Long id_pessoa;
 
     @Column(name="nome")
     private String nome;

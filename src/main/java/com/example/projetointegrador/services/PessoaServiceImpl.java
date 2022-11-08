@@ -27,9 +27,10 @@ public class PessoaServiceImpl implements PessoaService{
    @Override
    public Pessoa salvar(Pessoa pessoa){
         return pessoaRepository.save(pessoa);
-    }
+   }
     @Override
-    public void deletar(Long id_pessoa){
+        public void deletar(Long id_pessoa){
+
         pessoaRepository.deleteById(id_pessoa);
     }
 }
