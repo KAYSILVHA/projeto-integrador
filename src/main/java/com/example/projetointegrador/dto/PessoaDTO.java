@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 
 public class PessoaDTO {
-    private Long id;
+    private Long id_pessoa;
     private String nome;
     private Documento documento;
     private Endereco endereco;

@@ -10,4 +10,6 @@ public interface CarteiraService {
     Carteira editar(Carteira carteira);
 
     Carteira salvar(Carteira carteira);
+
+    void deletar(Long id_carteira);
 }

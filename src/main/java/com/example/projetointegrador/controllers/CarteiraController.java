@@ -37,4 +37,9 @@ public class CarteiraController {
         Carteira response = carteiraServiceImpl.editar(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-}
+
+    @DeleteMapping(value = "/deleteCarteira")
+    public ResponseEntity<Object> deletarCarteira(Long id_carteira) {
+        carteiraServiceImpl.deletar(id_carteira);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }}

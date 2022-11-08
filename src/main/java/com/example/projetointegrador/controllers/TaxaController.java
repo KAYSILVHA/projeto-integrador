@@ -35,8 +35,14 @@ public class TaxaController {
 
     @PutMapping(value = "/alterarTaxa")
     public ResponseEntity<Object> alterarTaxa(@RequestBody Taxa taxa) {
-       Taxa response = taxaServiceImpl.editar(taxa);
+        Taxa response = taxaServiceImpl.editar(taxa);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @DeleteMapping(value = "/deletarTaxa")
+    public ResponseEntity<Object> deletarTaxa(Long id_taxa) {
+        taxaServiceImpl.deletar(id_taxa);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }

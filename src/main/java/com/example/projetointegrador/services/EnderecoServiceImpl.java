@@ -26,5 +26,9 @@ public class EnderecoServiceImpl implements EnderecoService{
     @Override
     public Endereco salvar(Endereco endereco) {
         return enderecoRepository.save(endereco);
-
-    }}
+    }
+    @Override
+    public void deletar(Long id_endereco){
+       enderecoRepository.deleteById(id_endereco);
+    }
+}
