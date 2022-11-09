@@ -60,7 +60,7 @@ Validações
   
    List<Endereco> listaDeEnderecos = enderecoRepository.findAll();
         if(endereco.getCep().equals(listaDeEnderecos)){
-            System.out.println("Nome de taxa ja cadastrado, por favor digite outro!");
+            System.out.println("Cep ja cadastrado, por favor digite outro!");
         } else{
   return enderecoRepository.save(endereco);
      }
