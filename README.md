@@ -14,7 +14,7 @@ Validações
 
 [X]Não deixar salvar um documento com o mesmo cpf ou identidade;
 
-[ ]Não deixar salvar um endereço com o mesmo cep;
+[X]Não deixar salvar um endereço com o mesmo cep;
 
 
  List<Pessoa> listaDePessoas = pessoaRepository.findAll();
