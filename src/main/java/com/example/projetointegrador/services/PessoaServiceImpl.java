@@ -48,7 +48,6 @@ public class PessoaServiceImpl implements PessoaService{
 
     @Override
         public void deletar(Long id_pessoa){
-
         pessoaRepository.deleteById(id_pessoa);
     }
 }
