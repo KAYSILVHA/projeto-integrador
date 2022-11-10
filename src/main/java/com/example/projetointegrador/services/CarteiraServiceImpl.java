@@ -1,9 +1,7 @@
 package com.example.projetointegrador.services;
 
-import com.example.projetointegrador.dto.CarteiraDTO;
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.repositories.CarteiraRepository;
-import com.example.projetointegrador.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,16 +25,14 @@ public class CarteiraServiceImpl  implements CarteiraService {
     }
 
     @Override
-    public Carteira salvar(Carteira carteira) {
-        List<Carteira> listaDeCarteiras = carteiraRepository.findAll();
-        if(carteira.getNome().equals(listaDeCarteiras)){
-            System.out.println("Nome da Carteira ja cadastrado, por favor digite outro!");
-        }else{
-       return carteiraRepository.save(carteira);
-     }
-      return carteira;
-     }
-
+    public Carteira salvar(Carteira carteira) throws Exception {
+        List<Carteira> listaDeCarteira = carteiraRepository.findAll();
+        for (Carteira carteira1: listaDeCarteira) {
+            if(carteira.getNome().equals(carteira1.getNome())) {
+                throw new Exception("Esse nome já esta cadastrado!");
+            }
+        }return carteiraRepository.save(carteira);
+    }
     @Override
     public void deletar(Long id_carteira){
         carteiraRepository.deleteById(id_carteira);

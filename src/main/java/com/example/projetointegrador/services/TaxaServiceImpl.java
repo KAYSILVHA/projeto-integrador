@@ -24,8 +24,14 @@ public class TaxaServiceImpl implements TaxaService{
         return taxaRepository.save(taxa);
     }
     @Override
-    public Taxa salvar(Taxa taxa){
-        return taxaRepository.save(taxa);
+    public Taxa salvar(Taxa taxa) throws Exception {
+        List<Taxa> listaDeTaxa = taxaRepository.findAll();
+
+        for(Taxa taxa1 : listaDeTaxa){
+            if(taxa.getNome().equals(taxa1.getNome())) {
+                throw new Exception ("Nome de taxa ja cadastrado, por favor digite outro!");
+            }
+        }return taxaRepository.save(taxa);
     }
    @Override
         public void deletar(Long id_taxa){

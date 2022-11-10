@@ -21,7 +21,7 @@ public class DocumentoController {
     }
 
     @PostMapping(value = "/salvarDocumento")
-    public ResponseEntity<Object> salvarDocumento(@RequestBody Documento documento) {
+    public ResponseEntity<Object> salvarDocumento(@RequestBody Documento documento) throws Exception {
         Documento response = documentoServiceImpl.salvar(documento);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -37,11 +37,7 @@ public class DocumentoController {
         Documento response = documentoServiceImpl.editar(documento);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-<<<<<<< HEAD
-    @DeleteMapping(value = "/deletarDocumento")
-=======
-     @DeleteMapping(value = "/deletarDocumento")
->>>>>>> origin/main
+    @DeleteMapping(value="/deletarDocumento")
     public ResponseEntity<Object> deletarDocumento(Long id_documento) {
         documentoServiceImpl.deletar(id_documento);
         return ResponseEntity.status(HttpStatus.CREATED).build();

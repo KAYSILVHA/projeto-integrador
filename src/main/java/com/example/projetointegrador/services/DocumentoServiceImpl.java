@@ -24,9 +24,23 @@ public class DocumentoServiceImpl implements DocumentoService{
         return documentoRepository.save(documento);
     }
     @Override
-    public Documento salvar(Documento documento){
-        return documentoRepository.save(documento);
-    }
+    public Documento salvar(Documento documento) throws Exception {
+        List<Documento> listaDeDocumento = documentoRepository.findAll();
+
+        for(Documento documento1: listaDeDocumento){
+            if(documento.getCpf().equals(documento1.getCpf()))
+
+        { throw new Exception("Cpf ja cadastrado, por favor digite outro!");
+
+        }else if(documento.getIdentidade().equals(documento1.getIdentidade()))
+
+            { throw new Exception("Identidade ja cadastrada, por favor digite outra!");
+
+            }
+
+        }return documentoRepository.save(documento);
+
+}
      @Override
      public void deletar(Long id_documento){
         documentoRepository.deleteById(id_documento);

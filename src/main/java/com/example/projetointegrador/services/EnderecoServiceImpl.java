@@ -24,9 +24,18 @@ public class EnderecoServiceImpl implements EnderecoService{
         return enderecoRepository.save(endereco);
     }
     @Override
-    public Endereco salvar(Endereco endereco) {
-        return enderecoRepository.save(endereco);
-    }
+    public Endereco salvar(Endereco endereco) throws Exception {
+        List<Endereco> listaDeEndereco= enderecoRepository.findAll();
+
+        for(Endereco endereco1 : listaDeEndereco) {
+            if(endereco.getCep().equals(endereco1.getCep())) {
+                throw new Exception("Cep ja cadastrado, por favor digite outro!");
+        }
+
+        }return enderecoRepository.save(endereco);
+
+
+}
     @Override
     public void deletar(Long id_endereco){
        enderecoRepository.deleteById(id_endereco);

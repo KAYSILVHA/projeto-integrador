@@ -8,5 +8,6 @@ public class EnderecoDTO {
     private String logradouro;
     private String numeroCasa;
     private String referencia;
+    private String cep;
 }
 

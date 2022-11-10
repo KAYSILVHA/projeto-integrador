@@ -24,4 +24,7 @@ public class Endereco {
 
     @Column(name="numeroCasa")
     private String numeroCasa;
+
+    @Column(name="cep")
+    private String cep;
 }

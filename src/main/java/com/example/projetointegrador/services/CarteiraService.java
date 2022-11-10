@@ -9,7 +9,7 @@ public interface CarteiraService {
 
     Carteira editar(Carteira carteira);
  
-    Carteira salvar(Carteira carteira);
+    Carteira salvar(Carteira carteira) throws Exception;
 
     void deletar(Long id_carteira);
 }
