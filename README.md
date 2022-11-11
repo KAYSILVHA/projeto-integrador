@@ -17,4 +17,6 @@ Validações
 [X]Não deixar salvar um endereço com o mesmo cep;
 
 
+DIAGRAMA  DE  DADOS
+
  ![Modelagem](https://user-images.githubusercontent.com/114036212/201235994-f52c308a-5883-4607-919c-e800b30d6170.svg)
