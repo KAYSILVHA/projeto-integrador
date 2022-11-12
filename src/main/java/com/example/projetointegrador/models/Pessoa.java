@@ -51,9 +51,15 @@ public class Pessoa {
     @Column(name="rendimentoMensal")
     private Double rendimentoMensal;
 
-    @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.LAZY )
+    @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.EASER )
     @JoinTable (name= "pessoa_carteira" ,
             joinColumns = @JoinColumn(name = "id_carteira"),
             inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
     private Carteira carteira;
-}
+
+
+    @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.EASER )
+    @JoinTable (name= "pessoa_taxa" ,
+            joinColumns = @JoinColumn(name = "id_taxa"),
+            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
+    private Taxa taxa;

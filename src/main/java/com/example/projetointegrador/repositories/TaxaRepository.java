@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TaxaRepository extends JpaRepository<Taxa, Long> {
     List<Taxa> findTaxaByNome(String nome);
-
+    List<Taxa> findTaxaByPorcentagem(String porcentagem);
 
 }

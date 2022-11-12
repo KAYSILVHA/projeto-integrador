@@ -1,0 +1,19 @@
+
+!import Component
+!import EnableScheduling
+!import Service
+!import Scheduled
+
+@Component
+@EnableScheduling
+@Service
+
+public class Scheduler{
+    final PessoaServiceImpl pessoaServiceImpl;
+    @Scheduled(initialDeDelay=10000, fixdRate= 1500000)
+    public void executaAgendamentos () {
+        PessoaServiceImpl
+        System.out.println("O agendamento foi iniciado");
+    
+    }
+}

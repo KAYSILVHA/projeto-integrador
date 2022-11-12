@@ -49,4 +49,12 @@ public class PessoaServiceImpl implements PessoaService {
     public void deletar(Long id_pessoa) {
         pessoaRepository.deleteById(id_pessoa);
     }
+    @Override
+    public Double adicionarTaxa(Pessoa pessoa) {
+        List<Taxa>listaDeTaxa = taxaRepository.findAll();
+        Double saldo = carteira.getSaldo();
+        Double percentual = taxa.getPorcentagem();
+        Double juros = saldo + (percentual * saldo / 100);
+        return pessoaRepository.save(pessoa);
+        }
 }
