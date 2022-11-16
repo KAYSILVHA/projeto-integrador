@@ -24,5 +24,5 @@ public class Taxa {
     private String nome;
 
     @Column(name="porcentagem")
-    private String porcentagem;
+    private Double porcentagem;
 }

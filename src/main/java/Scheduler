@@ -10,9 +10,13 @@
 
 public class Scheduler{
     final PessoaServiceImpl pessoaServiceImpl;
+    public Scheduler(PessoaServiceImpl pessoaServiceImpl){
+        this.pessoaServiceImpl=pessoaServiceImpl;
+    }
     @Scheduled(initialDeDelay=10000, fixdRate= 1500000)
+    
     public void executaAgendamentos () {
-        PessoaServiceImpl
+        pessoaService.adicionarTaxa();
         System.out.println("O agendamento foi iniciado");
     
     }

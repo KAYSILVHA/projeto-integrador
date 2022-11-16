@@ -26,14 +26,14 @@ public class Pessoa {
 
     @ManyToOne ( cascade ={ CascadeType . MERGE , CascadeType . DETACH , CascadeType . REFRESH , CascadeType . PERSIST }, fetch = FetchType . LAZY )
     @JoinTable (name= "documento_pessoa " ,
-            joinColumns = @JoinColumn(name = "id_documento"),
-            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
+            joinColumns = @JoinColumn(name = "id_pessoa"),
+            inverseJoinColumns = @JoinColumn(name = "id_documento"))
     private Documento  documento;
 
    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH,CascadeType.PERSIST},fetch=FetchType.LAZY)
     @JoinTable(name="pessoa_endereco",
-               joinColumns= @JoinColumn(name="id_endereco"),
-               inverseJoinColumns= @JoinColumn(name="id_pessoa"))
+               joinColumns= @JoinColumn(name="id_pessoa"),
+               inverseJoinColumns= @JoinColumn(name="id_endereco"))
     private Endereco endereco;
 
     @Column(name="idade")
@@ -53,13 +53,14 @@ public class Pessoa {
 
     @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.EASER )
     @JoinTable (name= "pessoa_carteira" ,
-            joinColumns = @JoinColumn(name = "id_carteira"),
-            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
+            joinColumns = @JoinColumn(name = "id_pessoa"),
+            inverseJoinColumns = @JoinColumn(name = "id_carteira"))
     private Carteira carteira;
 
 
     @ManyToOne ( cascade ={ CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH , CascadeType.PERSIST }, fetch = FetchType.EASER )
     @JoinTable (name= "pessoa_taxa" ,
-            joinColumns = @JoinColumn(name = "id_taxa"),
-            inverseJoinColumns = @JoinColumn(name = "id_pessoa"))
+            joinColumns = @JoinColumn(name = "id_pessoa"),
+            inverseJoinColumns = @JoinColumn(name = "id_taxa"))
     private Taxa taxa;
+}

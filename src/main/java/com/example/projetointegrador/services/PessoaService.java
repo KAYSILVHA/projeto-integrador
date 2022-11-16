@@ -13,5 +13,5 @@ public interface PessoaService {
 
     void deletar(Long id_pessoa);
 
-    Pessoa adicionarTaxa(Pessoa pessoa);
+   Double adicionarTaxa(Pessoa pessoa);
 }

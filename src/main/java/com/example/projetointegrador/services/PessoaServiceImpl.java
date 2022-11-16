@@ -1,6 +1,7 @@
 package com.example.projetointegrador.services;
 
 import com.example.projetointegrador.models.Pessoa;
+import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public class PessoaServiceImpl implements PessoaService {
     final PessoaRepository pessoaRepository;
+    private Object Double;
 
     public PessoaServiceImpl(PessoaRepository pessoaRepository) {
         this.pessoaRepository = pessoaRepository;
@@ -50,11 +52,21 @@ public class PessoaServiceImpl implements PessoaService {
         pessoaRepository.deleteById(id_pessoa);
     }
     @Override
+
     public Double adicionarTaxa(Pessoa pessoa) {
-        List<Taxa>listaDeTaxa = taxaRepository.findAll();
-        Double saldo = carteira.getSaldo();
-        Double percentual = taxa.getPorcentagem();
-        Double juros = saldo + (percentual * saldo / 100);
-        return pessoaRepository.save(pessoa);
+    return pessoaRepository.save(pessoa).getCarteira().getSaldo();
+}
+    public void adicionarTaxa() {
+
+        List<Pessoa>listaDeTaxa = pessoaRepository.findAll();
+        for(Pessoa pessoa2 : listaDeTaxa){
+            if(pessoa2.getCarteira().getSaldo()!=null)
+        Double saldo = pessoa2.getCarteira().getSaldo();
+        Double juros = pessoa2.getTaxa().getPorcentagem();
+        Double rendimento = saldo + (saldo * (juros / 100));
+        pessoa2.getCarteira().setSaldo(rendimento);
+        pessoaRepository.save(pessoa2);
         }
+        
+    }
 }

@@ -6,6 +6,6 @@ import lombok.Data;
 public class TaxaDTO {
     private Long id_taxa;
     private String nome;
-    private String porcentagem;
+    private Double porcentagem;
 }
 
