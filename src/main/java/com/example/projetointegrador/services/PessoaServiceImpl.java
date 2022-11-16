@@ -60,13 +60,12 @@ public class PessoaServiceImpl implements PessoaService {
 
         List<Pessoa>listaDeTaxa = pessoaRepository.findAll();
         for(Pessoa pessoa2 : listaDeTaxa){
-            if(pessoa2.getCarteira().getSaldo()!=null)
+            if(pessoa2.getCarteira().getSaldo()!=null && pessoa2.getTaxa().getPorcentagem() != null){
         Double saldo = pessoa2.getCarteira().getSaldo();
         Double juros = pessoa2.getTaxa().getPorcentagem();
         Double rendimento = saldo + (saldo * (juros / 100));
         pessoa2.getCarteira().setSaldo(rendimento);
         pessoaRepository.save(pessoa2);
         }
-        
     }
 }
