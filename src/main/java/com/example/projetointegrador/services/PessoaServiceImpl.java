@@ -24,11 +24,23 @@ public class PessoaServiceImpl implements PessoaService {
 
     @Override
     public Pessoa editar(Pessoa pessoa) {
+         Pessoa pessoa = Pessoa.builder()
+        .nome(pessoaDTO.getNome());
+        .documento(pessoaDTO.getDocumento());
+        .endereco(pessoaDTO.getEndereco());
+        .idade(pessoaDTO.getIdade());
+        .genero(pessoaDTO.getGenero());
+        .estadoCivil(pessoaDTO.getEstadoCivil());
+        .dependentes(pessoaDTO.getDependentes());
+        .rendimentoMensal(pessoaDTO.getRendimentoMensal());
+        .carteira(pessoaDTO.getEndereco());
+        .build();
+
         return pessoaRepository.save(pessoa);
     }
 
     @Override
-    public Pessoa salvar(Pessoa pessoa) throws Exception {
+    public Pessoa salvar(PessoaDTO pessoaDTO) throws Exception {
 
 
         List<Pessoa> listaDePessoa = pessoaRepository.findAll();
@@ -44,6 +56,19 @@ public class PessoaServiceImpl implements PessoaService {
 
             }
         }
+        Pessoa pessoa = Pessoa.builder()
+        .nome(pessoaDTO.getNome());
+        .documento(pessoaDTO.getDocumento());
+        .endereco(pessoaDTO.getEndereco());
+        .idade(pessoaDTO.getIdade());
+        .genero(pessoaDTO.getGenero());
+        .estadoCivil(pessoaDTO.getEstadoCivil());
+        .dependentes(pessoaDTO.getDependentes());
+        .rendimentoMensal(pessoaDTO.getRendimentoMensal());
+        .carteira(pessoaDTO.getEndereco());
+        .build();
+
+
         return pessoaRepository.save(pessoa);
 
     }
@@ -64,7 +89,7 @@ public class PessoaServiceImpl implements PessoaService {
             if(pessoa2.getCarteira().getSaldo() != null && pessoa2.getTaxa().getPorcentagem() != null) {
                 Double saldo = pessoa2.getCarteira().getSaldo();
                 Double juros = pessoa2.getTaxa().getPorcentagem();
-                Double rendimento = saldo + (saldo * (juros / 100));
+                Double rendimento = saldo + (saldo * (juros.doubleofValue() / 100));
                 pessoa2.getCarteira().setSaldo(rendimento);
                 pessoaRepository.save(pessoa2);
             }

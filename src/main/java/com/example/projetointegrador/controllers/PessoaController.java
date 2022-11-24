@@ -19,8 +19,8 @@ public class PessoaController {
     }
 
     @PostMapping(value = "/salvarPessoa")
-    public ResponseEntity<Object> salvarPessoa(@RequestBody Pessoa pessoa) throws Exception {
-        Pessoa response = pessoaServiceImpl.salvar(pessoa);
+    public ResponseEntity<Object> salvarPessoa(@RequestBody PessoaDTO pessoaDTO) throws Exception {
+        Pessoa response = pessoaServiceImpl.salvar(pessoaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -31,8 +31,8 @@ public class PessoaController {
     }
 
     @PutMapping(value = "/alterarPessoa")
-    public ResponseEntity<Object> alterarPessoa(@RequestBody Pessoa pessoa) {
-        Pessoa response = pessoaServiceImpl.editar(pessoa);
+    public ResponseEntity<Object> alterarPessoa(@RequestBody PessoaDTO pessoaDTO) {
+        Pessoa response = pessoaServiceImpl.editar(pessoaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     

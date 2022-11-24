@@ -20,8 +20,8 @@ public class EnderecoController {
     }
 
     @PostMapping(value = "/salvarEndereco")
-    public ResponseEntity<Object> salvarEndereco(@RequestBody Endereco endereco) throws Exception {
-        Endereco response = enderecoServiceImpl.salvar(endereco);
+    public ResponseEntity<Object> salvarEndereco(@RequestBody EnderecoDTO enderecoDTO) throws Exception {
+        Endereco response = enderecoServiceImpl.salvar(enderecoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -32,7 +32,7 @@ public class EnderecoController {
     }
 
     @PutMapping(value = "/alterarEndereco")
-    public ResponseEntity<Object> alterarEndereco(@RequestBody Endereco endereco) {
+    public ResponseEntity<Object> alterarEndereco(@RequestBody EnderecoDTO enderecoDTO) {
         Endereco response = enderecoServiceImpl.editar(endereco);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

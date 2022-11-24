@@ -1,5 +1,6 @@
 package com.example.projetointegrador.controllers;
 
+import com.example.projetointegrador.dto.TaxaDTO;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.services.PessoaServiceImpl;
@@ -22,8 +23,8 @@ public class TaxaController {
     }
 
     @PostMapping(value = "/salvarTaxa")
-    public ResponseEntity<Object> taxaPessoa(@RequestBody Taxa taxa) throws Exception {
-        Taxa response = taxaServiceImpl.salvar(taxa);
+    public ResponseEntity<Object> taxaPessoa(@RequestBody TaxaDTO taxaDTO) throws Exception {
+        Taxa response = taxaServiceImpl.salvar(taxaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -34,8 +35,8 @@ public class TaxaController {
     }
 
     @PutMapping(value = "/alterarTaxa")
-    public ResponseEntity<Object> alterarTaxa(@RequestBody Taxa taxa) {
-        Taxa response = taxaServiceImpl.editar(taxa);
+    public ResponseEntity<Object> alterarTaxa(@RequestBody TaxaDTO taxaDTO) {
+        Taxa response = taxaServiceImpl.editar(taxaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

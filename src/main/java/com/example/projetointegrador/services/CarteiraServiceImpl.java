@@ -20,18 +20,33 @@ public class CarteiraServiceImpl  implements CarteiraService {
     }
 
     @Override
-    public Carteira editar(Carteira carteira) {
+    public Carteira editar(CarteiraDTO carteiraDTO) {
+         Carteira carteira= Carteira.builder()
+        .nome(carteiraDTO.getNome());
+        .saldo(carteiraDTO.getSaldo());
+        .dataInicioInvestimento(carteiraDTO.getDataInicioInvestimento());
+        .dataTerminoInvestimento(carteiraDTO.get dataTerminoInvestimento())
+        .build();
+
         return carteiraRepository.save(carteira);
     }
 
     @Override
-    public Carteira salvar(Carteira carteira) throws Exception {
+    public Carteira salvar(carteiraDTO carteiraDTO) throws Exception {
         List<Carteira> listaDeCarteira = carteiraRepository.findAll();
         for (Carteira carteira1: listaDeCarteira) {
             if(carteira.getNome().equals(carteira1.getNome())) {
                 throw new Exception("Esse nome já esta cadastrado!");
             }
-        }return carteiraRepository.save(carteira);
+        }
+        Carteira carteira= Carteira.builder()
+        .nome(carteiraDTO.getNome());
+        .saldo(carteiraDTO.getSaldo());
+        .dataInicioInvestimento(carteiraDTO.getDataInicioInvestimento());
+        .dataTerminoInvestimento(carteiraDTO.get dataTerminoInvestimento())
+        .build();
+        
+        return carteiraRepository.save(carteira);
     }
     @Override
     public void deletar(Long id_carteira){

@@ -18,7 +18,7 @@ public class CarteiraController {
         this.carteiraServiceImpl = carteiraService;
     }
     @PostMapping(value = "/salvarCarteira")
-    public ResponseEntity<Object> salvarCarteira(@RequestBody Carteira carteira) throws Exception {
+    public ResponseEntity<Object> salvarCarteira(@RequestBody CarteiraDTO carteiraDTO) throws Exception {
         Carteira response = carteiraServiceImpl.salvar(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -30,7 +30,7 @@ public class CarteiraController {
     }
 
     @PutMapping(value = "/alterarCarteira")
-    public ResponseEntity<Object> alterarCarteira(@RequestBody Carteira carteira) {
+    public ResponseEntity<Object> alterarCarteira(@RequestBody CarteiraDTO carteiraDTO) {
         Carteira response = carteiraServiceImpl.editar(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

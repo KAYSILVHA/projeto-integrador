@@ -7,9 +7,9 @@ import java.util.List;
 public interface PessoaService {
     List<Pessoa> listar();
 
-    Pessoa editar(Pessoa pessoa);
+    Pessoa editar(PessoaDTO pessoaDTO);
 
-    Pessoa salvar(Pessoa pessoa) throws Exception;
+    Pessoa salvar(PessoaDTO pessoaDTO) throws Exception;
 
     void deletar(Long id_pessoa);
 

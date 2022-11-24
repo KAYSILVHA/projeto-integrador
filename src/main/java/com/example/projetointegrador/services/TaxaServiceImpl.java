@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services;
 
+import com.example.projetointegrador.dto.TaxaDTO;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.repositories.PessoaRepository;
@@ -21,17 +22,28 @@ public class TaxaServiceImpl implements TaxaService{
     }
     @Override
     public Taxa editar(Taxa taxa){
+        Taxa taxa = Taxa.builder()
+        .nome(taxaDTO.getNome());
+        .porcentagem(taxaDTO.getPorcentagem() ! = null ? taxaDTO.getPorcentagem() : null)
+        .build();
+        
         return taxaRepository.save(taxa);
     }
     @Override
-    public Taxa salvar(Taxa taxa) throws Exception {
+    public Taxa salvar(TaxaDTO taxaDTO) throws Exception {
         List<Taxa> listaDeTaxa = taxaRepository.findAll();
-
         for(Taxa taxa1 : listaDeTaxa){
-            if(taxa.getNome().equals(taxa1.getNome())) {
+            if(taxaDTO.getNome().equals(taxa1.getNome())) {
                 throw new Exception ("Nome de taxa ja cadastrado, por favor digite outro!");
             }
-        }return taxaRepository.save(taxa);
+
+        }
+        Taxa taxa = Taxa.builder()
+        .nome(taxaDTO.getNome());
+        .porcentagem(taxaDTO.getPorcentagem() ! = null ? taxaDTO.getPorcentagem() : null)
+        .build();
+        
+        return taxaRepository.save(taxa);
     }
    @Override
         public void deletar(Long id_taxa){

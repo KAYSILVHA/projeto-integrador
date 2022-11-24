@@ -8,8 +8,9 @@ import java.util.List;
 public interface DocumentoService {
     List<Documento> listar();
 
-   Documento editar(Documento documento);
+   Documento editar(DocumentoDTO documentoDTO);
 
-    Documento salvar(Documento documento) throws Exception;
+    Documento salvar(DocumentoDTO documentoDTO) throws Exception;
+
     void deletar(Long id_documento);
 }

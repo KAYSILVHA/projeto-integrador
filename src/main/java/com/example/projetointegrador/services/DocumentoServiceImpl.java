@@ -21,10 +21,16 @@ public class DocumentoServiceImpl implements DocumentoService{
     }
     @Override
     public Documento editar(Documento documento){
+          Documento documento = Documento.builder()
+        .cpf(documentoDTO.getCpf());
+        .identidade(documentoDTO.getIdentidade());
+        .cnpj(documentoDTO.getCnpj())
+        .build();
+        
         return documentoRepository.save(documento);
     }
     @Override
-    public Documento salvar(Documento documento) throws Exception {
+    public Documento salvar(DocumentoDTO documentoDTO) throws Exception {
         List<Documento> listaDeDocumento = documentoRepository.findAll();
 
         for(Documento documento1: listaDeDocumento){
@@ -38,7 +44,13 @@ public class DocumentoServiceImpl implements DocumentoService{
 
             }
 
-        }return documentoRepository.save(documento);
+        }
+        Documento documento = Documento.builder()
+        .cpf(documentoDTO.getCpf());
+        .identidade(documentoDTO.getIdentidade());
+        .cnpj(documentoDTO.getCnpj())
+        .build();
+        return documentoRepository.save(documento);
 
 }
      @Override

@@ -24,7 +24,7 @@ public class EnderecoServiceImpl implements EnderecoService{
         return enderecoRepository.save(endereco);
     }
     @Override
-    public Endereco salvar(Endereco endereco) throws Exception {
+    public Endereco salvar(EnderecoDTO enderecoDTO) throws Exception {
         List<Endereco> listaDeEndereco= enderecoRepository.findAll();
 
         for(Endereco endereco1 : listaDeEndereco) {
@@ -32,7 +32,16 @@ public class EnderecoServiceImpl implements EnderecoService{
                 throw new Exception("Cep ja cadastrado, por favor digite outro!");
         }
 
-        }return enderecoRepository.save(endereco);
+        }
+        Endereco endereco = Endereco.builder()
+        .logradouro(enderecoDTO.getLogradouro());
+        .numeroCasa(enderecoDTO.getNumeroCasa());
+        .referencia(enderecoDTO.getReferencia());
+        .cep(enderecoDTO.getCep());
+        .build();
+
+
+     return enderecoRepository.save(endereco);
 
 
 }

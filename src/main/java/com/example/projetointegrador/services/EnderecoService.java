@@ -9,9 +9,9 @@ public interface EnderecoService {
 
     List<Endereco> listar();
 
-    Endereco editar(Endereco endereco);
+    Endereco editar(EnderecoDTO enderecoDTO);
 
-    Endereco salvar(Endereco endereco) throws Exception;
+    Endereco salvar(EnderecoDTO enderecoDTO) throws Exception;
 
     void deletar(Long id_endereco);
 }
