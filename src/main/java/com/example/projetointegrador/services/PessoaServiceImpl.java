@@ -94,4 +94,18 @@ public class PessoaServiceImpl implements PessoaService {
                 pessoaRepository.save(pessoa2);
             }
         }
+Pessoa pessoa = Pessoa.builder()
+                        .nome(pessoaDTO.getNome())
+                        .genero(pessoaDTO.getGenero())
+                        .idade(pessoaDTO.getIdade())
+                        .estadoCivil(pessoaDTO.getEstadoCivil())
+                        .dependentes(pessoaDTO.getDependentes())
+                        .rendimentoMensal(pessoaDTO.getRendimentoMensal())
+                        .documento(pessoaDTO.getDocumento())
+                        .carteira(pessoaDTO.getCarteira())
+                        .endereco(pessoaDTO.getEndereco())
+                        .taxa(pessoaDTO.getTaxa())
+                        .build();
+                pessoaRepository.save(pessoa);
+            }
     }}
