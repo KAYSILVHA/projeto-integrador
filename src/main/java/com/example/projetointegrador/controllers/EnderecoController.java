@@ -1,5 +1,6 @@
 package com.example.projetointegrador.controllers;
 
+import com.example.projetointegrador.dto.EnderecoDTO;
 import com.example.projetointegrador.models.Documento;
 import com.example.projetointegrador.models.Endereco;
 import com.example.projetointegrador.services.DocumentoServiceImpl;
@@ -33,7 +34,7 @@ public class EnderecoController {
 
     @PutMapping(value = "/alterarEndereco")
     public ResponseEntity<Object> alterarEndereco(@RequestBody EnderecoDTO enderecoDTO) {
-        Endereco response = enderecoServiceImpl.editar(endereco);
+        Endereco response = enderecoServiceImpl.editar(enderecoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     

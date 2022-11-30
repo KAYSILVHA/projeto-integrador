@@ -20,5 +20,6 @@ public class PessoaDTO {
     private String dependentes;
     private Double rendimentoMensal;
     private Carteira carteira;
+    private String taxa;
 
 }

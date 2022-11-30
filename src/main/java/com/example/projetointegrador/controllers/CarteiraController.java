@@ -1,5 +1,6 @@
 package com.example.projetointegrador.controllers;
 
+import com.example.projetointegrador.dto.CarteiraDTO;
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.services.CarteiraServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -19,7 +20,7 @@ public class CarteiraController {
     }
     @PostMapping(value = "/salvarCarteira")
     public ResponseEntity<Object> salvarCarteira(@RequestBody CarteiraDTO carteiraDTO) throws Exception {
-        Carteira response = carteiraServiceImpl.salvar(carteira);
+        Carteira response = carteiraServiceImpl.salvar(carteiraDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -31,7 +32,7 @@ public class CarteiraController {
 
     @PutMapping(value = "/alterarCarteira")
     public ResponseEntity<Object> alterarCarteira(@RequestBody CarteiraDTO carteiraDTO) {
-        Carteira response = carteiraServiceImpl.editar(carteira);
+        Carteira response = carteiraServiceImpl.editar(carteiraDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
     @DeleteMapping(value = "/deleteCarteira")

@@ -1,5 +1,6 @@
 package com.example.projetointegrador.controllers;
 
+import com.example.projetointegrador.dto.DocumentoDTO;
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.models.Documento;
 import com.example.projetointegrador.services.CarteiraServiceImpl;
@@ -22,7 +23,7 @@ public class DocumentoController {
 
     @PostMapping(value = "/salvarDocumento")
     public ResponseEntity<Object> salvarDocumento(@RequestBody DocumentoDTO documentoDTO) throws Exception {
-        Documento response = documentoServiceImpl.salvar(documento);
+        Documento response = documentoServiceImpl.salvar(documentoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

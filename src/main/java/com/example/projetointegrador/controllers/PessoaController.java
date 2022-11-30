@@ -1,5 +1,6 @@
 package com.example.projetointegrador.controllers;
 
+import com.example.projetointegrador.dto.PessoaDTO;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.services.PessoaServiceImpl;
 import org.springframework.http.HttpStatus;

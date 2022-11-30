@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services;
 
+import com.example.projetointegrador.dto.PessoaDTO;
 import com.example.projetointegrador.models.Pessoa;
 
 import java.util.List;

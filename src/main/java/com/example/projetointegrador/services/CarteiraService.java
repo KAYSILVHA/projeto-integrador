@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services;
 
+import com.example.projetointegrador.dto.CarteiraDTO;
 import com.example.projetointegrador.models.Carteira;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public interface CarteiraService {
 
     Carteira editar(CarteiraDTO carteiraDTO);
  
-    Carteira salvar(carteiraDTO carteiraDTO) throws Exception;
+    Carteira salvar(CarteiraDTO carteiraDTO) throws Exception;
 
     void deletar(Long id_carteira);
 }

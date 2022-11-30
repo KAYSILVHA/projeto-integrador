@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services;
 
+import com.example.projetointegrador.dto.EnderecoDTO;
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.models.Endereco;
 

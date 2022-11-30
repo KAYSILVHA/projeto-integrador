@@ -23,8 +23,8 @@ public class TaxaServiceImpl implements TaxaService{
     @Override
     public Taxa editar(Taxa taxa){
         Taxa taxa = Taxa.builder()
-        .nome(taxaDTO.getNome());
-        .porcentagem(taxaDTO.getPorcentagem() ! = null ? taxaDTO.getPorcentagem() : null)
+        .nome(taxaDTO.getNome())
+        .porcentagem(taxaDTO.getPorcentagem() != null ? taxaDTO.getPorcentagem() : null)
         .build();
         
         return taxaRepository.save(taxa);
@@ -39,8 +39,8 @@ public class TaxaServiceImpl implements TaxaService{
 
         }
         Taxa taxa = Taxa.builder()
-        .nome(taxaDTO.getNome());
-        .porcentagem(taxaDTO.getPorcentagem() ! = null ? taxaDTO.getPorcentagem() : null)
+        .nome(taxaDTO.getNome())
+        .porcentagem(taxaDTO.getPorcentagem() !=null ? taxaDTO.getPorcentagem() : null)
         .build();
         
         return taxaRepository.save(taxa);
