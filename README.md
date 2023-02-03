@@ -11,8 +11,7 @@ Projeto desenvolvido no curso de Desenvolvimentos de sistemas do SENAC. <br/>
   
 </p>
 
-<p align="center">
-  <img alt="projeto integrador" src="preview.jpeg" width="100%">
+'Interface está em fase de desenvolvimento por mim...'
 </p>
 
 ## 🚀 Tecnologias
