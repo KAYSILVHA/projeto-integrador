@@ -1,22 +1,36 @@
-# projeto-integrador
-Software de poupança
+<h1 align="center"> Projeto Integrador </h1>
 
-Validações
+<p align="center">
+Projeto desenvolvido no curso de Desenvolvimentos de sistemas do SENAC. <br/>
+</p>
+
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;
+  
+</p>
+
+<p align="center">
+  <img alt="projeto integrador" src="preview.jpeg" width="100%">
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- Java
+- HeidSql
+- Workbench
+- Postman
+- Git e Github
 
 
-[X]Não deixar salvar uma carteira com o mesmo nome;
+## 💻 Projeto
 
-[X]Não deixar salvar pessoa com o mesmo cpf ou identidade;
-
-[X]Não deixar salvar uma pessoa com o mesmo numero da casa;
-
-[X]Não deixar salvar uma taxa com o mesmo nome;
-
-[X]Não deixar salvar um documento com o mesmo cpf ou identidade;
-
-[X]Não deixar salvar um endereço com o mesmo cep;
+Batizado de Poupa+, esse projeto simula um software de poupança. 
 
 
-DIAGRAMA  DE  DADOS
+## ✅ DIAGRAMA  DE  DADOS
 
  ![Modelagem](https://user-images.githubusercontent.com/114036212/201235994-f52c308a-5883-4607-919c-e800b30d6170.svg)
