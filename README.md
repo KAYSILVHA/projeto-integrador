@@ -10,7 +10,9 @@ Projeto desenvolvido no curso de Desenvolvimentos de sistemas do SENAC. <br/>
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;
   
 </p>
-
+<p align="center">
+  <img alt="projeto Integrador" src="preview.png" width="100%">
+</p>
 'Interface está em fase de desenvolvimento por mim...'
 </p>
 
