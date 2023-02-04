@@ -27,6 +27,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Workbench
 - Postman
 - Figma
+- Gimp
 - Git e Github
 
 
