@@ -32,12 +32,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Batizado de Poupa+, esse projeto simula um software de poupança. 
 
 
-## ✅ DIAGRAMA  DE  DADOS
-
- ![Modelagem](https://user-images.githubusercontent.com/114036212/201235994-f52c308a-5883-4607-919c-e800b30d6170.svg)
- 
- 
  ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/TgITMbcK7u75FM7Mx0W3dD/Poupa%2B?node-id=0%3A1&t=5LvAZsEhPb7pWgXC-1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
+
+## ✅ DIAGRAMA  DE  DADOS
+
+ ![Modelagem](https://user-images.githubusercontent.com/114036212/201235994-f52c308a-5883-4607-919c-e800b30d6170.svg)
