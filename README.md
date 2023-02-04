@@ -11,7 +11,7 @@ Projeto desenvolvido no curso de Desenvolvimentos de sistemas do SENAC. <br/>
   
 </p>
 <p align="center">
-  <img alt="projeto Integrador" src="preview.png" width="50%">
+  <img alt="projeto Integrador" src="preview.png" width="30%">
 </p>
 'Interface está em fase de desenvolvimento por mim...'
 </p>
@@ -38,5 +38,4 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 
 
 ## ✅ DIAGRAMA  DE  DADOS
-
  ![Modelagem](https://user-images.githubusercontent.com/114036212/201235994-f52c308a-5883-4607-919c-e800b30d6170.svg)
