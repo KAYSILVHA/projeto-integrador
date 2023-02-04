@@ -25,6 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HeidSql
 - Workbench
 - Postman
+- Figma
 - Git e Github
 
 
